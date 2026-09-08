@@ -3,34 +3,189 @@
 <head>
   <title>The Unsaid</title>
   <style>
-    body{
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
       background-color: #f5f0e8;
       color: #2d2926;
       font-family: Georgia, serif;
+    }
+
+    nav {
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #d8cfc2;
+    }
+
+    nav h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2d2926;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    .hero {
       text-align: center;
-      padding: 50px;
+      padding: 110px 20px 90px;
     }
-    h1{
-      font-size: 50px;
+
+    .hero h1 {
+      font-size: 72px;
+      font-weight: normal;
+      margin: 0;
+      letter-spacing: 2px;
     }
-    h2{
-      margin-top: 50px;
+
+    .hero p {
+      font-size: 20px;
+      font-style: italic;
+      margin-top: 25px;
+      color: #625b54;
     }
-    p{
-      font-size: 18px;
-      line height: 1.8;
+
+    .line {
+      width: 70px;
+      margin: 35px auto;
+      border-top: 1px solid #8f857a;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 25px 100px;
+    }
+
+    .content h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      border: 1px solid #d8cfc2;
+      padding: 35px;
+      text-align: center;
+      background-color: #f8f4ee;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    .card p {
+      color: #625b54;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #d8cfc2;
+      color: #625b54;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 52px;
       }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        margin-left: 10px;
+      }
+    }
   </style>
+
 </head>
-  <body>
-<h1>The Unsaid</h1>
-<p>A personal space for poetry, books, thoughts, and stories.</p>
-<p>Some words are meant to be felt, not explained.</p>
+
+<body>
+
+  <nav>
+    <h3>The Unsaid</h3>
+
+    <div>
+      <a href="#">Home</a>
+      <a href="#explore">Explore</a>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+
+    <h1>The Unsaid</h1>
+
+    <div class="line"></div>
+
+    <p>
+      Words for everything we never quite say.
+    </p>
+
+  </section>
+
+
+  <section class="content" id="explore">
+
     <h2>What you will find here</h2>
-    <p>Poetry</p>
-    <p>Books</p>
-    <p>Thoughts</p>
-    <p>Stories</p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Poetry</h3>
+        <p>Words that say what silence sometimes cannot.</p>
+      </div>
+
+      <div class="card">
+        <h3>Books</h3>
+        <p>Stories, pages and thoughts worth remembering.</p>
+      </div>
+
+      <div class="card">
+        <h3>Thoughts</h3>
+        <p>Little observations about people, life and everything between.</p>
+      </div>
+
+      <div class="card">
+        <h3>Stories</h3>
+        <p>Fragments of moments that deserve to be told.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © 2026 The Unsaid
+  </footer>
+
+
+    
   </body>
 </html>
 
