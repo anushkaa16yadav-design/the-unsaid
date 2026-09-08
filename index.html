@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>The Unsaid</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -33,9 +35,20 @@
       font-size: 15px;
     }
 
+    .mode-button {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 18px;
+      border: 1px solid #8f857a;
+      background-color: transparent;
+      color: inherit;
+      font-family: Georgia, serif;
+      cursor: pointer;
+    }
+
     .hero {
       text-align: center;
-      padding: 110px 20px 90px;
+      padding: 90px 20px 90px;
     }
 
     .hero h1 {
@@ -99,6 +112,11 @@
       line-height: 1.7;
     }
 
+    .card a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -107,7 +125,38 @@
       font-size: 14px;
     }
 
+    /* Dark Mode */
+
+    .dark {
+      background-color: #2d2926;
+      color: #f5f0e8;
+    }
+
+    .dark nav {
+      border-color: #625b54;
+    }
+
+    .dark nav a {
+      color: #f5f0e8;
+    }
+
+    .dark .hero p,
+    .dark .card p {
+      color: #d8cfc2;
+    }
+
+    .dark .card {
+      background-color: #3a3531;
+      border-color: #625b54;
+    }
+
+    .dark footer {
+      border-color: #625b54;
+      color: #d8cfc2;
+    }
+
     @media (max-width: 600px) {
+
       .hero h1 {
         font-size: 52px;
       }
@@ -119,6 +168,7 @@
       nav a {
         margin-left: 10px;
       }
+
     }
   </style>
 
@@ -127,13 +177,20 @@
 <body>
 
   <nav>
+
     <h3>The Unsaid</h3>
 
     <div>
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="#explore">Explore</a>
     </div>
+
   </nav>
+
+
+  <button class="mode-button" onclick="toggleMode()">
+    🌙 Dark Mode
+  </button>
 
 
   <section class="hero">
@@ -143,7 +200,7 @@
     <div class="line"></div>
 
     <p>
-      Words for everything we never quite say...
+      Words for everything we never quite say.
     </p>
 
   </section>
@@ -152,32 +209,42 @@
   <section class="content" id="explore">
 
     <h2>What you will find here</h2>
-    
-<div class="card">
-  <a href="poetry.html">
-    <h3>Poetry</h3>
-    <p>Words that say what silence sometimes cannot.</p>
-  </a>
-</div>
-<div class="card">
-  <a href="books.html">
-    <h3>Books</h3>
-    <p>Stories, pages and thoughts worth remembering.</p>
-  </a>
-</div>
 
-<div class="card">
-  <a href="thoughts.html">
-    <h3>Thoughts</h3>
-    <p>Little observations about people, life and everything between.</p>
-  </a>
-</div>
+    <div class="cards">
+
       <div class="card">
-  <a href="stories.html">
-    <h3>Stories</h3>
-    <p>Fragments of moments that deserve to be told.</p>
-  </a>
-</div>
+        <a href="poetry.html">
+          <h3>Poetry</h3>
+          <p>Words that say what silence sometimes cannot.</p>
+        </a>
+      </div>
+
+
+      <div class="card">
+        <a href="books.html">
+          <h3>Books</h3>
+          <p>Stories, pages and thoughts worth remembering.</p>
+        </a>
+      </div>
+
+
+      <div class="card">
+        <a href="thoughts.html">
+          <h3>Thoughts</h3>
+          <p>Little observations about people, life and everything between.</p>
+        </a>
+      </div>
+
+
+      <div class="card">
+        <a href="stories.html">
+          <h3>Stories</h3>
+          <p>Fragments of moments that deserve to be told.</p>
+        </a>
+      </div>
+
+    </div>
+
   </section>
 
 
@@ -186,7 +253,22 @@
   </footer>
 
 
-    
-  </body>
-</html>
+  <script>
 
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+
+      const button = document.querySelector(".mode-button");
+
+      if (document.body.classList.contains("dark")) {
+        button.innerHTML = "☀️ Light Mode";
+      } else {
+        button.innerHTML = "🌙 Dark Mode";
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>
